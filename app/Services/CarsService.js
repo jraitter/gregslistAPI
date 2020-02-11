@@ -42,7 +42,6 @@ class CarsService {
     _api
       .put(id, update)
       .then(res => {
-        debugger;
         let car = store.State.cars.find(c => c._id == id);
         //NOTE both these methods apply the changes to the original object
         //car = { ...car, ...update };

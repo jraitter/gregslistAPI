@@ -2,23 +2,23 @@ import CarsService from "../Services/CarsService.js";
 import store from "../store.js";
 
 //Private
-function _draw() {
+function _drawCars() {
   let cars = store.State.cars;
-  let carsElem = document.getElementById("cars");
+  let dataElem = document.getElementById("current-data");
   let template = "";
 
   cars.forEach(car => {
     template += car.Template;
   });
 
-  carsElem.innerHTML = template;
+  dataElem.innerHTML = template;
 }
 
 //Public
 export default class CarsController {
   constructor() {
-    store.subscribe("cars", _draw);
-    this.getAllCars();
+    store.subscribe("cars", _drawCars);
+    // this.getAllCars();
   }
 
   getAllCars() {
@@ -27,7 +27,6 @@ export default class CarsController {
 
   addCar(event) {
     event.preventDefault();
-
     // NOTE formData is an alias for our submitted form from our html
     let formData = event.target;
     // NOTE newcar is an object with all the inputted values from our form
@@ -47,12 +46,10 @@ export default class CarsController {
   }
 
   bid(id, price) {
-    debugger;
     CarsService.editCar(id, { price });
   }
 
   removeImg(id) {
-    debugger;
     CarsService.editCar(id, { imgUrl: "//placehold.it/200x200" });
   }
 
