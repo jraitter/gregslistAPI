@@ -68,8 +68,8 @@ class CarsService {
   }
 }
 
-const service = new CarsService();
-export default service;
+const carsService = new CarsService();
+export default carsService;
 
 //GETALL
 //site/api/COLLECTIONNAME

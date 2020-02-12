@@ -39,6 +39,7 @@
       </div>
 
       <div class="col-4">
+
         <!-- car input Modal -->
         <div class="modal fade" id="car-form" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
           aria-hidden="true">
@@ -137,6 +138,54 @@
                   <div class="form-group">
                     <label for="imgUrl">Image</label>
                     <input type="text" name="imgUrl" class="form-control" placeholder="Enter a imgUrl here..." />
+                  </div>
+                  <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- job input Modal -->
+        <div class="modal fade" id="job-form" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Add a Job</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form onsubmit="app.jobsController.addJob(event)">
+                  <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" name="company" class="form-control" placeholder="Enter company name..."
+                      required />
+                  </div>
+                  <div class="form-group">
+                    <label for="jobTitle">Job Title</label>
+                    <input type="text" name="jobTitle" class="form-control" placeholder="Enter job title here..." />
+                  </div>
+                  <div class="form-group">
+                    <label for="rate">Rate</label>
+                    <input type="number" min="0" name="rate" class="form-control" placeholder="Enter hourly wage..." />
+                  </div>
+                  <div class="form-group">
+                    <label for="hours">Hours</label>
+                    <input type="number" name="hours" class="form-control" min="0"
+                      placeholder="Enter hours worked..." />
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" class="form-control"
+                      placeholder="Enter a description here..." />
                   </div>
                   <button type="submit" class="btn btn-primary">Save</button>
                 </form>

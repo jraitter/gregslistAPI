@@ -37,11 +37,12 @@ class HousesService {
   }
 
   editHouse(id, update) {
+    // in this case update = { price: price }
     _api
       .put(id, update)
       .then(result => {
         let house = store.State.houses.find(h => h._id == id);
-        // loop thru properties of ths house or keep all and the updated property.
+        // loop thru properties of this house or keep all and the updated property.
         // house = { ...house, ...update };
         for (let prop in update) {
           house[prop] = update[prop];
