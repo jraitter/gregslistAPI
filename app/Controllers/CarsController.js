@@ -22,7 +22,7 @@ export default class CarsController {
   }
 
   getAllCars() {
-    CarsService.getCars();
+    CarsService.getAllCars();
   }
 
   addCar(event) {

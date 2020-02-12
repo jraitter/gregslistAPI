@@ -8,7 +8,7 @@ let _api = axios.create({
 });
 
 class CarsService {
-  getCars() {
+  getAllCars() {
     _api
       .get("")
       .then(res => {
